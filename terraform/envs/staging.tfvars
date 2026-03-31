@@ -1,0 +1,9 @@
+project_id                   = "your-gcp-project-id"
+region                       = "us-central1"
+zone                         = "us-central1-a"
+environment                  = "staging"
+gcs_bucket_name              = "shopper-behavior-data-lake"
+bq_dataset_id                = "cart_abandonment"
+dataproc_cluster_name        = "shopper-spark-cluster"
+dataproc_worker_count        = 0
+dataproc_master_machine_type = "n1-standard-4"

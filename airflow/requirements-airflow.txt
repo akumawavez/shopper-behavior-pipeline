@@ -1,0 +1,10 @@
+pyspark>=3.5,<4.0
+google-cloud-storage>=2.14,<3.0
+google-cloud-bigquery>=3.17,<4.0
+google-cloud-dataproc>=5.0,<6.0
+apache-airflow-providers-google>=10.0,<11.0
+dbt-core>=1.8,<2.0
+dbt-bigquery>=1.8,<2.0
+kaggle>=1.6,<2.0
+python-dotenv>=1.0,<2.0
+pandas>=2.0,<3.0

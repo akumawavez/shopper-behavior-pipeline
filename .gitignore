@@ -1,2 +1,56 @@
-.env
+# Virtual environments
 dezcamp/
+venv/
+.venv/
+
+# Environment and secrets
+.env
+.env.dev
+.env.staging
+.env.prod
+secrets/**
+!secrets/.gitkeep
+
+# Data (large files, downloaded from Kaggle)
+data/**
+!data/**/
+!data/**/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Terraform
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.backup
+terraform/.terraform.lock.hcl
+
+# Airflow (local Docker volumes)
+airflow/logs/
+airflow/plugins/
+airflow/config/
+
+# dbt
+dbt/cart_abandonment/target/
+dbt/cart_abandonment/dbt_packages/
+dbt/cart_abandonment/logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Notes and plans (personal)
+Notes.txt
+*.plan.md
+cart_abandonment_pipeline_plan*.md
