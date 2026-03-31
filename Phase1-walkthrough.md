@@ -80,6 +80,17 @@ Expected:
 3. Place it in a folder in your `PATH` (for example `C:\tools\terraform\`)
 4. Reopen PowerShell
 
+Add that folder to your PATH (this is the part people often miss)
+
+Go to:
+System Properties → Environment Variables → Path
+Add:
+C:\tools\terraform
+
+⚠️ Just placing the file is NOT enough — it must be in PATH.
+
+Reopen PowerShell - required for PATH refresh
+
 ### Verify
 
 ```powershell
@@ -87,6 +98,15 @@ terraform --version
 ```
 
 Expected: version output (for example `Terraform v1.x.x`)
+
+In PowerShell, run:
+
+```powershell
+where terraform
+```
+
+If this returns a path → you’re set
+If not → PATH issue
 
 ---
 
@@ -109,9 +129,21 @@ gcloud --version
 gcloud config list
 ```
 
+Add this (very important). This confirms you're actually logged in.:
+```powershell
+gcloud auth list
+```
+
+
 Expected:
 - `gcloud` command works
 - Current project is your intended project
+
+
+On Windows, prefer the official installer (.exe)
+It automatically:
+Adds gcloud to PATH
+Installs Python if needed
 
 ---
 
@@ -130,10 +162,37 @@ If you do not already have a project:
    - Cloud Storage API
 
 ### Verify
+
+Quick check
+```powershell
+gcloud beta billing projects describe YOUR_PROJECT_ID
+```
+
 - In GCP Console, project is selected
 - APIs show as enabled in `APIs & Services`
 
+Enable APIs
+```powershell
+gcloud services enable compute.googleapis.com
+gcloud services enable dataproc.googleapis.com
+gcloud services enable bigquery.googleapis.com
+gcloud services enable storage.googleapis.com
+```
+
+Verify
+```powershell
+gcloud services list --enabled
+```
+
 ---
+
+Some checks:
+```powershell
+gcloud config get-value project
+
+```
+
+gcloud config get-value project
 
 ## Step 6: Create Service Account Key
 
